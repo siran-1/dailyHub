@@ -1,0 +1,93 @@
+/* This file contains 
+stylings for the elements 
+'container' */
+
+.container {
+  width: 100%;
+  height: 99.9vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--light-background);
+}
+
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: var(--light-background);
+  border-width: 0;
+  box-sizing: border-box;
+  color: var(--Light-black);
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: var(--size-base);
+  border-radius: 5px;
+
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/* media queries */
+/* xs */
+@media screen and (min-width: 475px) {
+  .container {
+    max-width: 475px;
+    margin: auto;
+  }
+}
+
+/* sm */
+@media screen and (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    margin: auto;
+  }
+}
+
+/* md */
+@media screen and (min-width: 768px) {
+  .container {
+    min-width: 768px;
+    display: grid;
+    grid-template-columns: 20% auto;
+    gap: 10px;
+  }
+}
+
+/* lg */
+@media screen and (min-width: 1024px) {
+  .container {
+    min-width: 1024px;
+    max-width: 1280px;
+  }
+}
+
+/* xl */
+@media screen and (min-width: 1280px) {}
+
+/* 2xl */
+@media screen and (min-width: 1536px) {}

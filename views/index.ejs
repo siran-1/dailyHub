@@ -1,0 +1,91 @@
+<%-include('partials/header')-%>
+<body>
+  <main class="app-main-container container">
+      <section class="app-main-desktop__sidebar" id="leftbar">
+        <div class="app-main-desktop_bg app-main-desktop_bg1"></div>
+        <div class="app-main-desktop_bg app-main-desktop_bg2"></div>
+        <div class="app-main-desktop__sidebar_user">
+          <div class="app-main-desktop__sidebar_userChild">
+            <label class="app__userName" id="app__userName"><i class="fas fa-user"></i>&nbsp;<%=locals.username%></label>
+            <button id="app-main-desktop__signoutbtn" class="app-main-desktop__signoutbtn hvr-icon-bob button-30"><i
+                class="fas fa-sign-out-alt hvr-icon"></i>&nbsp; logout</button>
+          </div>
+        </div>
+        <div class="app-main-desktop__navParent">
+          <nav class="app-main-desktop__navChild">
+            <ul>
+              <li><button class="app-main-desktop__links hvr-icon-bob button-30 custom_btn active_tabBtn"
+                  data-attribute="homeTab"><i class="fas fa-home fa-lg hvr-icon"></i>&nbsp; HOME</button></li>
+              <li><button class="app-main-desktop__links hvr-icon-bob button-30 custom_btn"
+                  data-attribute="viewActiveTasksTab" id="dailyHubViewTasksBtn"><i
+                    class="fas fa-clipboard-list fa-lg hvr-icon"></i>&nbsp; VIEW ACTIVE TASKS</button></li>
+              <li><button class="app-main-desktop__links hvr-icon-bob button-30 custom_btn"
+                  data-attribute="completedTasksTab" id="dailyHubCompletedTasksBtn"><i class="fas fa-tasks fa-lg hvr-icon"></i>&nbsp; COMPLETED
+                  TASKS</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section class="app-mainTab" id="mainTab">
+        <div class="app-mainTab__Tabs" id="homeTab">
+          <div class="app-mainTab__top">
+            <label id="app-mainTab__greet"></label><span id="greeting_divider"> | </span>
+            <label id="app-mainTab__date"></label>
+          </div>
+          <div class="app-mainTab__bottom">
+            <div class="app-bg app-mainTab__bottom_bg1"></div>
+            <div class="app-bg app-mainTab__bottom_bg2"></div>
+            <div class="app-bg app-mainTab__bottom_bg3"></div>
+            <div class="app-bg app-mainTab__bottom_bg4"></div>
+            <div class="app-mainTab__quoteDiv">
+              <p id="app-mainTab__quote"></p>
+            </div>
+            <div class="app-mainTab__addTask" id="app-mainTab__addTask">
+              <button class="app-mainTab__addTask_btn" id="app-mainTab__addTask_btnn"><i class="fas fa-plus fa-lg"></i>Add
+                Task</button>
+              <div class="" id="addTask_input">
+                <form action="" class="form_main">
+                  <p class="heading">Task Details</p>
+                  <div class="input-container">
+                    <input type="text" id="input_task_name" required="">
+                    <label for="input" class="label">Task Name</label>
+                    <div class="underline"></div>
+                  </div>
+                  <div><button class="button-30 addTask_input_submitbtn custom_btn" id="submit_task_btn">Add Task</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app-mainTab__Tabs" id="viewActiveTasksTab">
+          <div id="activeTasksTopDiv"><label id="viewActiveTasksTab_title">Active Tasks</label></div>
+          <div id="activeTasksParent" data-attribute="noTasks"></div>
+          <div id="task_edit_modal">
+            <div id="task_edit_modal_title">
+              <label>Edit task</label>
+              <button id="close_task_edit_modal_btn"><i class="far fa-times-circle"></i></button>
+            </div>
+            <div class="task_edit_details" id="task_name"></div>
+            <textarea class="task_edit_details" id="task_desc" placeholder="Enter Description"></textarea>
+            <input class="task_edit_details" type="date" id="task_due">
+            <div id="task_edit_modal_controls">
+              <button class="btn button-30" id="task_edit_modal_del_btn"><i class="far fa-trash-alt"></i>&nbsp; Delete task</button>
+              <button class="btn button-30" id="submit_task_edit_modal_btn">Submit</button>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="app-mainTab__Tabs" id="completedTasksTab">
+          <div id="completedTasksTopDiv"><label id="completedTasksTab_title">Completed Tasks</label></div>
+          <div id="completedTasks_TableDiv">
+            <table id="completedTasks_Table">
+              
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <%-include('partials/footer')-%>

@@ -1,0 +1,93 @@
+:root {
+    --light-background: #fafafa;
+    --Off-White: #eeeff1;
+
+    /* accents */
+    --Black: #000000;
+    --Light-black: #212226;
+    --Grey-font: #707594;
+
+    /* Mandate-colors */
+    --white-important: #edf2f4;
+    --green: #09BC8A;
+    --blue: #06AED5;
+    --purple: #CF43FD;
+    --dark-purple: #4E4187;
+    --main-color: #323232;
+
+    /*sizes*/
+    --size-xxs: 0.5rem;
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-base: 1rem;
+    --size-lg: 1.125rem;
+    --size-xl: 1.25rem;
+    --size-2xl: 1.5rem;
+    --size-3xl: 1.875rem;
+    --size-4xl: 2.25rem;
+    --size-5xl: 3rem;
+    --size-6xl: 3.75rem;
+    --size-7xl: 4.5rem;
+    --size-8xl: 6rem;
+    --size-9xl: 8rem;
+    --size-10xl: 10rem;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 99vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-mainTab__Tabs {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    width: 50%;
+    color: var(--Black);
+    font-size: var(--size-base);
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    border-radius: 5px;
+
+    align-self: center;
+    z-index: 3;
+    overflow: hidden;
+}
+
+#dailyHub_new_signup_formDiv,
+#dailyHub_SwitchtoLogin {
+    display: none;
+}
+
+#dailyHub_login_header {
+    padding: 0.5em;
+    background-color: var(--green);
+}
+
+#dailyHub_login_body {
+    padding: 0.5em;
+}
+
+#dailyHub_login_btn {
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    border-radius: 5px;
+    background-color: var(--geen);
+}
+
+#social_login_div {
+    display: flex;
+    flex-direction: column;
+}
+
+#dailyHub_NewUserBtn,
+#dailyHub_SwitchtoLogin {
+    font-weight: 100;
+    background-color: var(--Off-White);
+    border: 1px solid var(--Black);
+}

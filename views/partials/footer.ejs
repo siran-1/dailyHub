@@ -1,0 +1,44 @@
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA-TK4yipKUr4p5D6PYDHK5cZ4ZFcxINcc",
+        authDomain: "dailyhub.firebaseapp.com",
+        projectId: "dailyhub",
+        storageBucket: "dailyhub.appspot.com",
+        messagingSenderId: "779982824312",
+        appId: "1:779982824312:web:9b9b7e987ee2b106541e8d",
+        measurementId: "G-GC1VK6Y6ZH"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+<% if(locals.title && locals.title==="DailyHubLogin" ) { %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="/javascripts/dailyHubLoginApp.js"></script>
+    <%} else if( locals.title==="DailyHubApp" ){%>
+        <script>
+            firebase.auth().onAuthStateChanged(user => {
+                console.log('authstatecalled');
+                if (!user) {
+                    window.location.href = '/';
+                } else {
+                }
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                fetch_quotes();
+            });
+        </script>
+        <script src="/javascripts/utils.js"></script>
+        <script src="/moment/moment.min.js"></script>
+        <script src="/javascripts/quote.js"></script>
+        <script src="/javascripts/dailyHubHomeTab.js"></script>
+        <script src="/javascripts/dailyHubActiveTasks.js"></script>
+        <script src="/javascripts/dailyHubCompletedTasks.js"></script>
+        <script src="/javascripts/logout.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <%}%>
+            </html>

@@ -1,0 +1,31 @@
+#completedTasksTab {
+    position: relative;
+    overflow: hidden;
+}
+
+#completedTasksTopDiv{
+    background: var(--green);
+    padding: 0.9em;
+    border-bottom: 2px solid var(--Grey-font);
+    z-index: 3; 
+}
+
+#completedTasksTab_title{
+    font-size: var(--size-4xl);
+    font-weight: 800;
+    color: var(--Off-White);
+    user-select: none;
+}
+
+#completedTasks_TableDiv{
+    padding: 1em;
+    border: 1px solid var(--Grey-font);
+    border-radius: 5px;
+    margin: 1em;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+}
+
+#completedTasks_Table{
+    border: 1px solid var(--Grey-font);
+}

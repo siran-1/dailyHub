@@ -1,0 +1,109 @@
+#viewActiveTasksTab {
+    position: relative;
+    overflow: hidden;
+}
+
+#activeTasksTopDiv{
+    background: var(--green);
+    padding: 0.9em;
+    border-bottom: 2px solid var(--Grey-font);
+    z-index: 3; 
+}
+
+#viewActiveTasksTab_title{
+    font-size: var(--size-4xl);
+    font-weight: 800;
+    color: var(--Off-White);
+    user-select: none;
+}
+
+#activeTasksParent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 0.5em;
+}
+
+.allActiveTasksChild {
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    border-radius: 5px;
+    width: 140px;
+    height: 180px;
+    padding: 0.5em;
+    background: var(--light-background);
+    cursor: pointer;
+    overflow-wrap:break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.allActiveTasksChild:hover{
+    scale: 1.1;
+}
+
+.allActiveTasksName{
+    font-size: var(--size-sm);
+}
+
+.allActiveTasksDesc{
+    font-size: var(--size-xs);
+}
+
+.allActiveTasksDue{
+    font-size: var(--size-sm);
+    font-weight: 600;
+}
+
+#task_edit_modal{
+    display:none;
+    flex-direction: column;
+    gap:1em;
+    width: 40%;
+    height: 60vh;
+    overflow: hidden;
+    background: var(--green);
+    position: absolute;
+    top: 20%;
+    left:20%;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    box-shadow: 1px 0px 217px 66px rgba(0,0,0,0.54);
+-webkit-box-shadow: 1px 0px 217px 66px rgba(0,0,0,0.54);
+-moz-box-shadow: 1px 0px 217px 66px rgba(0,0,0,0.54);
+}
+
+#task_edit_modal_title{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--size-2xl);
+    font-weight: 800;
+    color: var(--green);
+    user-select: none;
+    background: var(--Off-White); 
+    padding: 0.5em;
+    border-bottom: 2px solid var(--Grey-font);
+}
+
+.task_edit_details{
+    margin: 0.2em;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    height: var(--size-4xl);
+    padding: 0.5em;
+}
+
+#task_desc{
+    resize: none;
+}
+
+#task_edit_modal_controls{
+    display:flex;
+    justify-content: space-around;
+    padding: 0.2em;
+}
+
+#task_edit_modal_del_btn{
+    background: #DA454E;
+}

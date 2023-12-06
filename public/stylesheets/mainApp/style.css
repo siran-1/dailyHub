@@ -1,0 +1,89 @@
+/* This file contains sizes, 
+colors, 
+root element stylings and 
+font imports */
+
+
+:root {
+  --light-background: #fafafa;
+  --Off-White: #eeeff1;
+
+ /* accents */
+ --Black: #000000;
+ --Light-black: #212226;
+ --Grey-font: #707594;
+
+ /* Mandate-colors */
+ --white-important: #edf2f4;
+ --green: #09BC8A;
+ --blue: #06AED5;
+ --purple: #CF43FD;
+ --dark-purple: #4E4187;
+ --main-color: #323232;
+ 
+  /*sizes*/
+  --size-xxs:0.5rem;
+  --size-xs:0.75rem;
+  --size-sm:0.875rem;
+  --size-base:1rem;
+  --size-lg:1.125rem;
+  --size-xl:1.25rem;
+  --size-2xl:1.5rem;
+  --size-3xl:1.875rem;
+  --size-4xl:2.25rem;
+  --size-5xl:3rem;
+  --size-6xl:3.75rem;
+  --size-7xl:4.5rem;
+  --size-8xl:6rem;
+  --size-9xl:8rem;
+  --size-10xl:10rem;
+
+}
+
+* {
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+img, video, picture, canvas, svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+
+/* Importing fonts */
+@font-face {
+  font-family: Inter;
+  src: url(/fonts/Inter-VariableFont.ttf);
+} 
+
+
+
