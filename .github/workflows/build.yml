@@ -51,7 +51,7 @@ jobs:
       - name: Set up Python (required for EB CLI)
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: '3.8'
 
       - name: Install AWS Elastic Beanstalk CLI
         run: pip install awsebcli
