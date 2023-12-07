@@ -33,17 +33,44 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: http://54.172.131.154:9000
+          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
         with:
           args: >
             -Dsonar.projectKey=dailyHub
-            -Dsonar.host.url=http://54.172.131.154:9000/
+            -Dsonar.host.url=${{ secrets.SONAR_URL }} 
             -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
+#=========================================
+  terraform-apply:
+    name: Apply Terraform Configuration
+    runs-on: ubuntu-latest
+    needs: [build, sonarqube-analysis]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: "1.x.x" # specify your Terraform version
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
 #=========================================
   deploy-to-eb:
     name: Deploy to Elastic Beanstalk
     runs-on: ubuntu-latest
-    needs: [build, sonarqube-analysis]
+    needs: [build, sonarqube-analysis, terraform-apply]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
