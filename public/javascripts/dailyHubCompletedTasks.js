@@ -1,24 +1,30 @@
+let completedtaskstable;
 const dailyHubCompletedTasksBtn = document.getElementById('dailyHubCompletedTasksBtn');
 dailyHubCompletedTasksBtn.addEventListener('click', (event) => {
-    fetchCompletedTasksClient();
+    let checkfortasks =  $("#completedTasks_Table").attr('isDataTablesPresent');
+    if(checkfortasks =="No"){
+        fetchCompletedTasksClient();
+    }
 });
 
-
 function fetchCompletedTasksClient() {
-    let ajax = new GlobalAjax();
-    let action = "completed_tasks";
-    ajax.performRequest(action, null)
-        .then(data => {
-            $('#completedTasks_Table').DataTable({
-                data: data,
-                columns: [
-                  { title: "Task Name", data: "task_name" },
-                  { title: "Due Date", data: "due_date" },
-                  { title: "Description", data: "description" },
-                ]
-              });
-        })
-        .catch(error => {
-            console.error('Error fetching completed tasks:', error);
-        })
+    completedtaskstable = $('#completedTasks_Table').DataTable({
+        ajax: {
+            url: '/dailyHub',
+            type: 'POST',
+            data:{action:'completed_tasks'},
+            dataSrc: '',
+            error: function (error) {
+                console.error('Error fetching completed tasks:', error);
+            }
+        },
+        columns: [
+            { title: "Task Name", data: "task_name" },
+            { title: "Due Date", data: "due_date" },
+            { title: "Description", data: "description" }
+        ],
+        initComplete: function () {
+            $("#completedTasks_Table").attr('isDataTablesPresent', "Yes");
+        }
+    });
 }
