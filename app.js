@@ -14,7 +14,7 @@ let logoutRouter = require('./routes/logout');
 let sessionRouter = require('./routes/session');
 // initialize app
 let app1 = express();
-
+app1.disable("x-powered-by");
 // view engine setup
 app1.set('views', path.join(__dirname, 'views'));
 app1.set('view engine', 'ejs');

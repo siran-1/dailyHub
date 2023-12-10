@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 const app2 = express();
-
+app2.disable("x-powered-by");
 app2.use(bodyParser.json());
 app2.use(bodyParser.urlencoded({ extended: true }));
 
