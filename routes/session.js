@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 
 
-const app = express();
+const app2 = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app2.use(bodyParser.json());
+app2.use(bodyParser.urlencoded({ extended: true }));
 
 router.post('/', (req, res) => {
     try {

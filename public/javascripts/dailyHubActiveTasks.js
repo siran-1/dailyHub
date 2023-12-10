@@ -18,7 +18,7 @@ function fetch_tasks_main() {
                     let taskChild = document.createElement('div');
                     taskChild.classList.add('allActiveTasksChild');
 
-                    let selectedColor = Math.floor(Math.random() * 4);
+                    let selectedColor = getRandomColorIndex();
                     taskChild.style.backgroundColor = colors[selectedColor];
 
                     let taskName = document.createElement('div');
@@ -48,6 +48,10 @@ function fetch_tasks_main() {
     }
     else allActiveTaskParentDiv.setAttribute('data-attribute', 'tasksPresent');
 };
+
+function getRandomColorIndex() {
+    return Math.floor(Math.random() * 4);
+}
 
 // Edit Task Modal
 const parent = document.getElementById('activeTasksParent');
