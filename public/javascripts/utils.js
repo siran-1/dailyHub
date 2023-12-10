@@ -5,7 +5,6 @@ const tabs = document.getElementsByClassName('app-mainTab__Tabs');
 
 for (let i = 0; i < tab_switches.length; i++) {
     tab_switches[i].onclick = (event) => {
-        console.log("clicked")
         let target = event.currentTarget.getAttribute('data-attribute');
         for (let i = 0; i < tabs.length; i++) {
             let tab_to_select = tabs[i];

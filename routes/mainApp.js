@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 let userId = null;
 /* GET login page. */
 router.post('/', async (req, res) => {
@@ -93,12 +93,15 @@ async function fetch_active_tasks(req, res, connection, userId) {
 
 async function update_task(req, res, connection, userId) {
     const task_desc = req.body.data.task_desc;
+    console.log(task_desc)
     const task_due_date = req.body.data.task_due_date;
+    console.log(task_due_date)
     const task_id = req.body.data.task_id;
+    console.log(task_id);
 
-    const query = 'UPDATE dailyHub.tasks SET description = ?, due_date = ? WHERE task_id = ? and user_id = ?';
+    const query = 'UPDATE dailyhub.tasks SET description = ?, due_date = ? WHERE task_id = ? and user_id = ?';
     const queryParams = [task_desc, task_due_date, task_id, userId];
-
+    console.log(userId);
     connection.query(query, queryParams, (error, results) => {
         if (error) {
             res.status(500).json({ error: 'Error updating tasks' });
@@ -111,7 +114,7 @@ async function update_task(req, res, connection, userId) {
 async function delete_task(req, res, connection, userId) {
     const task_id = req.body.data;
     console.log("task id is " + task_id);
-    const query = 'DELETE from dailyHub.tasks WHERE task_id = ? AND user_id = ?';
+    const query = 'DELETE from dailyhub.tasks WHERE task_id = ? AND user_id = ?';
     const queryParams = [task_id, userId];
 
     connection.query(query, queryParams, (error, results) => {

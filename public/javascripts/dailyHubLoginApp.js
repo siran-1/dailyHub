@@ -27,14 +27,14 @@ document.getElementById('dailyHub_login_btn').addEventListener('click', function
 
 // AUTHENTICATE EXISTING USER - F I R E B A S E
 function authenticateUser() {
-    var email = document.getElementById('dailyHub_login_email').value;
-    var password = document.getElementById('dailyHub_login_password').value;
+    let email = document.getElementById('dailyHub_login_email').value;
+    let password = document.getElementById('dailyHub_login_password').value;
     if (password == "" || email == "") {
         return;
     }
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            var user = userCredential.user;
+            let user = userCredential.user;
             console.log("User signed in:", user);
             if (user) {
                 $.ajax({
@@ -67,17 +67,17 @@ function authenticateUser() {
 
         })
         .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            let errorCode = error.code;
+            let errorMessage = error.message;
             console.error("Error signing in:", errorCode, errorMessage);
         });
 }
 
 // NEW USER CREATION - F I R E B A S E
 function registerUser() {
-    var email = document.getElementById('dailyHub_new_email').value;
-    var password = document.getElementById('dailyHub_new_password').value;
-    var username = document.getElementById('dailyHub_new_username').value;
+    let email = document.getElementById('dailyHub_new_email').value;
+    let password = document.getElementById('dailyHub_new_password').value;
+    let username = document.getElementById('dailyHub_new_username').value;
     if (password == "" || email == "") {
         return;
     }

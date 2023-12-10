@@ -1,18 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var connection = require('./db/dbConnection');
+require('dotenv').config();
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let logger = require('morgan');
+let connection = require('./db/dbConnection');
 const session = require('express-session');
 
 // Obtain routes for views
-var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/login');
-var mainAppRouter = require('./routes/mainApp');
-var logoutRouter = require('./routes/logout');
-var sessionRouter = require('./routes/session');
+let indexRouter = require('./routes/index');
+let loginRouter = require('./routes/login');
+let mainAppRouter = require('./routes/mainApp');
+let logoutRouter = require('./routes/logout');
+let sessionRouter = require('./routes/session');
 // initialize app
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

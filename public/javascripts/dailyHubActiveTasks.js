@@ -14,7 +14,6 @@ function fetch_tasks_main() {
         let ajax = new GlobalAjax();
         ajax.performRequest(action, null)
             .then(data => {
-                console.log(data)
                 for (const task of data) {
                     let taskChild = document.createElement('div');
                     taskChild.classList.add('allActiveTasksChild');
