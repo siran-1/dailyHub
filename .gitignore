@@ -1,4 +1,4 @@
 node_modules/
-# adding terraforms
+# adding terraform
 terraform/.terraform/
 .env
